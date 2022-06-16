@@ -1,7 +1,7 @@
 {
   "name": "nativepininput",
   "widgetName": "NativePinInput",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mendix React Native Pin Input Widget",
   "copyright": "GNU",
   "author": "Ockert van Schalkwyk - Originally Marcel Groeneweg",
