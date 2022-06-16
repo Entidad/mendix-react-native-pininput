@@ -27,6 +27,23 @@ This widget uses buttons and shows the number of entered digits in a readonly te
 - First clear the value and then send validation feedback. Feedback will not be visible the other way around.
 - To center the widget horizontally, place the widget in a container that has Size=Minimum space and Align=Center
 
+## Sample Content Area Button Styling
+
+```
+export const PinInputUndoButton={
+        container:{
+                width:"100%",
+                height:"100%",
+                backgroundColor:"unset",
+                borderWidth:0,
+        },
+        icon:{
+                color:"#FFFFFF",
+                size:30
+        }
+};
+```
+
 ## Demo project
 ./test
 

@@ -8,7 +8,6 @@ export interface CustomStyle extends Style {
     valueRow: ViewStyle;
     pinInputView: ViewStyle;
     deleteButtonTouchable: ViewStyle;
-    undoButtonTouchable: ViewStyle;
     emptyContainer: ViewStyle;
     icon: TextStyle;
     caption: TextStyle;
@@ -46,11 +45,6 @@ export const commonStyles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "transparent"
     },
-    undoButtonTouchable: {
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "transparent"
-    },
     emptyContainer: {
         backgroundColor: "transparent"
     },
@@ -70,7 +64,6 @@ export const defaultStyle: CustomStyle = {
     valueRow: commonStyles.valueRow,
     pinInputView: commonStyles.pinInputView,
     deleteButtonTouchable: commonStyles.deleteButtonTouchable,
-    undoButtonTouchable: commonStyles.undoButtonTouchable,
     icon: commonStyles.icon,
     emptyContainer: commonStyles.emptyContainer,
     caption: commonStyles.caption,
@@ -89,7 +82,6 @@ export const darkStyles = StyleSheet.create({
         backgroundColor: "#1c1c1c"
     },
     deleteButtonTouchable: {},
-    undoButtonTouchable: {},
     emptyContainer: {},
     icon: {
         color: "#FFFFFF"
@@ -111,7 +103,6 @@ export const lightStyles = StyleSheet.create({
         backgroundColor: "#f8f8f8"
     },
     deleteButtonTouchable: {},
-    undoButtonTouchable: {},
     emptyContainer: {},
     icon: {
         color: "#000000"
@@ -142,11 +133,6 @@ export const circleStyles = StyleSheet.create({
         height: 70,
         width: 70
     },
-    undoButtonTouchable: {
-        marginLeft: 30,
-        height: 70,
-        width: 70
-    },
     emptyContainer: {
         height: 70,
         width: 100
@@ -170,11 +156,6 @@ export const numKeyboardStyles = StyleSheet.create({
         width: 85
     },
     deleteButtonTouchable: {
-        marginLeft: 10,
-        height: 50,
-        width: 85
-    },
-    undoButtonTouchable: {
         marginLeft: 10,
         height: 50,
         width: 85

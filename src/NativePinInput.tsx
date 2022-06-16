@@ -6,22 +6,20 @@ import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 import { PinInputButton } from "./components/PinInputButton";
 import { ValueStatus } from "mendix";
 import { DeleteButton } from "./components/DeleteButton";
-import { UndoButton } from "./components/UndoButton";
 export function NativePinInput({
 	style,
 	dataAttr,
 	maxLength,
 	deleteButtonIcon,
-	undoButtonIcon,
 	darkMode,
 	buttonStyle,
 	onChangeAction,
-	onInputCompleteAction
+	onInputCompleteAction,
+	bottomLeft
 }: NativePinInputProps<CustomStyle>): ReactElement {
 	const deviceDarkMode = Appearance.getColorScheme() === "dark";
 
 	const [textValue, setTextValue] = useState<string>("");
-	const [bufValue, setBufValue] = useState<string[]>([]);
 	const [displayValue, setDisplayValue] = useState<string>("");
 
 	// Insert additional styles based on properties.
@@ -71,14 +69,6 @@ export function NativePinInput({
 			setTextValue(newTextValue);
 			setDisplayValue(displayValue + "*");
 			displayValueLength++;
-			// ----------------------------------------
-			// Buffer			//sq
-			// ----------------------------------------
-			const clone=[...bufValue];	//sq
-			clone.push(newTextValue);	//sq
-			setBufValue(clone);		//sq
-			// ----------------------------------------
-
 			// Execute on change action if more input expected,
 			// execute on input complete action if all digits were entered.
 			if (displayValueLength < maxLength) {
@@ -99,13 +89,6 @@ export function NativePinInput({
 		}
 		if (textValue && displayValue && textValue.length > 0) {
 			const newValue = textValue.substring(0, textValue.length - 1);
-			// ----------------------------------------
-			// Buffer
-			// ----------------------------------------
-			const clone = [...bufValue];	//sq
-			clone.push(newValue);		//sq
-			setBufValue(clone);		//sq
-			// ----------------------------------------
 			const newDisplayValue = displayValue.substring(0, displayValue.length - 1);
 			dataAttr.setTextValue(newValue);
 			setTextValue(newValue);
@@ -115,31 +98,6 @@ export function NativePinInput({
 			}
 		}
 	};
-	const onUndoClick = (): void => {//skullquake
-		if (!dataAttr || dataAttr.status !== ValueStatus.Available) {
-			return;
-		}
-		//if (bufValue && displayValue && bufValue.length > 0) {
-			const clone = [...bufValue];	//sq
-			let newValue=clone.pop();	//sq
-			if(newValue==null){
-				newValue="";
-			}else{
-				newValue=newValue+"";
-			}
-			//alert(newValue);
-			setBufValue(clone);		//sq
-			dataAttr.setTextValue(newValue);
-			const newDisplayValue=newValue;	//sq
-			setTextValue(newValue);
-			setDisplayValue(newDisplayValue);
-			if (onChangeAction && onChangeAction.canExecute && !onChangeAction.isExecuting) {
-				onChangeAction.execute();
-			}
-		//}
-	};
-
-
 	const renderValidation = useMemo((): ReactElement => {
 		let validation;
 		if (dataAttr.validation) {
@@ -172,7 +130,9 @@ export function NativePinInput({
 				<PinInputButton caption="9" style={mergedStyle} onClick={onClick} />
 			</View>
 			<View style={mergedStyle.buttonRow}>
-				<UndoButton undoButtonIcon={undoButtonIcon} style={mergedStyle} onClick={onUndoClick} />
+				<View style={mergedStyle.emptyContainer}>
+					{bottomLeft}
+				</View>
 				<PinInputButton caption="0" style={mergedStyle} onClick={onClick} />
 				<DeleteButton deleteButtonIcon={deleteButtonIcon} style={mergedStyle} onClick={onDeleteClick} />
 			</View>
