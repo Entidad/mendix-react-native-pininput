@@ -21,6 +21,7 @@ export function NativePinInput({
 	const deviceDarkMode = Appearance.getColorScheme() === "dark";
 
 	const [textValue, setTextValue] = useState<string>("");
+	const [bufValue, setBufValue] = useState<string[]>([]);
 	const [displayValue, setDisplayValue] = useState<string>("");
 
 	// Insert additional styles based on properties.
@@ -63,12 +64,20 @@ export function NativePinInput({
 		// Add input if not at maximum length yet
 		let displayValueLength = displayValue ? displayValue.length : 0;
 		if (displayValueLength < maxLength) {
+
 			// Add digit to value
 			const newTextValue = textValue + value;
 			dataAttr.setTextValue(newTextValue);
 			setTextValue(newTextValue);
 			setDisplayValue(displayValue + "*");
 			displayValueLength++;
+			// ----------------------------------------
+			// Buffer			//sq
+			// ----------------------------------------
+			const clone=[...bufValue];	//sq
+			clone.push(newTextValue);	//sq
+			setBufValue(clone);		//sq
+			// ----------------------------------------
 
 			// Execute on change action if more input expected,
 			// execute on input complete action if all digits were entered.
@@ -90,6 +99,13 @@ export function NativePinInput({
 		}
 		if (textValue && displayValue && textValue.length > 0) {
 			const newValue = textValue.substring(0, textValue.length - 1);
+			// ----------------------------------------
+			// Buffer
+			// ----------------------------------------
+			const clone = [...bufValue];	//sq
+			clone.push(newValue);		//sq
+			setBufValue(clone);		//sq
+			// ----------------------------------------
 			const newDisplayValue = displayValue.substring(0, displayValue.length - 1);
 			dataAttr.setTextValue(newValue);
 			setTextValue(newValue);
@@ -103,16 +119,24 @@ export function NativePinInput({
 		if (!dataAttr || dataAttr.status !== ValueStatus.Available) {
 			return;
 		}
-		if (textValue && displayValue && textValue.length > 0) {
-			const newValue = "";//textValue.substring(0, textValue.length - 1);
-			const newDisplayValue = "";//displayValue.substring(0, displayValue.length - 1);
+		//if (bufValue && displayValue && bufValue.length > 0) {
+			const clone = [...bufValue];	//sq
+			let newValue=clone.pop();	//sq
+			if(newValue==null){
+				newValue="";
+			}else{
+				newValue=newValue+"";
+			}
+			//alert(newValue);
+			setBufValue(clone);		//sq
 			dataAttr.setTextValue(newValue);
+			const newDisplayValue=newValue;	//sq
 			setTextValue(newValue);
 			setDisplayValue(newDisplayValue);
 			if (onChangeAction && onChangeAction.canExecute && !onChangeAction.isExecuting) {
 				onChangeAction.execute();
 			}
-		}
+		//}
 	};
 
 
