@@ -26,3 +26,21 @@ This widget uses buttons and shows the number of entered digits in a readonly te
 - The widget value will clear if you set the attribute to empty in a nanoflow.
 - First clear the value and then send validation feedback. Feedback will not be visible the other way around.
 - To center the widget horizontally, place the widget in a container that has Size=Minimum space and Align=Center
+
+## Demo project
+./test
+
+## Issues, suggestions and feature requests
+[GitHub](https://github.com/Entidad/mendix-react-native-pininput/issues)
+
+## Development and contribution
+
+1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
+2. `npm install react-select`
+3. Run `npm start` to watch for code changes. On every change:
+    - the widget will be bundled;
+    - the bundle will be included in a `dist` folder in the root directory of the project;
+    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
+
+Contributions welcome
+
