@@ -5,7 +5,7 @@
             <widgetFile path="NativePinInput.xml"/>
         </widgetFiles>
         <files>
-            <file path="itvisors/nativepininput"/>
+            <file path="entidad.io/nativepininput"/>
         </files>
     </clientModule>
 </package>

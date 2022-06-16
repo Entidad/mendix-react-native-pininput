@@ -11,7 +11,7 @@
   "config": {
     "projectPath": "./test/"
   },
-  "packagePath": "endidad.io",
+  "packagePath": "entidad.io",
   "scripts": {
     "start": "pluggable-widgets-tools start:native",
     "build": "pluggable-widgets-tools build:native",

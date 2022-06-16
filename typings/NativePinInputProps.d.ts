@@ -15,6 +15,7 @@ export interface NativePinInputProps<Style> {
     style: Style[];
     dataAttr: EditableValue<string>;
     maxLength: number;
+    undoButtonIcon: DynamicValue<NativeIcon>;
     deleteButtonIcon: DynamicValue<NativeIcon>;
     darkMode: DarkModeEnum;
     buttonStyle: ButtonStyleEnum;
@@ -29,6 +30,7 @@ export interface NativePinInputPreviewProps {
     readOnly: boolean;
     dataAttr: string;
     maxLength: number | null;
+    undoButtonIcon: { type: "glyph"; iconClass: string; } | { type: "image"; imageUrl: string; } | null;
     deleteButtonIcon: { type: "glyph"; iconClass: string; } | { type: "image"; imageUrl: string; } | null;
     darkMode: DarkModeEnum;
     buttonStyle: ButtonStyleEnum;

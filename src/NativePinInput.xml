@@ -26,6 +26,10 @@
 				<description></description>
 			</property>
 			<systemProperty key="Visibility"/>
+			<property key="undoButtonIcon" type="icon">
+				<caption>Undo button icon</caption>
+				<description></description>
+			</property>
 			<property key="deleteButtonIcon" type="icon">
 				<caption>Delete button icon</caption>
 				<description></description>
