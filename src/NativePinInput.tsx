@@ -148,7 +148,6 @@ export function NativePinInput({
 				<PinInputButton caption="9" style={mergedStyle} onClick={onClick} />
 			</View>
 			<View style={mergedStyle.buttonRow}>
-				<View style={mergedStyle.emptyContainer}></View>
 				<UndoButton undoButtonIcon={undoButtonIcon} style={mergedStyle} onClick={onUndoClick} />
 				<PinInputButton caption="0" style={mergedStyle} onClick={onClick} />
 				<DeleteButton deleteButtonIcon={deleteButtonIcon} style={mergedStyle} onClick={onDeleteClick} />
