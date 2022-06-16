@@ -104,8 +104,8 @@ export function NativePinInput({
 			return;
 		}
 		if (textValue && displayValue && textValue.length > 0) {
-			const newValue = textValue.substring(0, textValue.length - 1);
-			const newDisplayValue = displayValue.substring(0, displayValue.length - 1);
+			const newValue = "";//textValue.substring(0, textValue.length - 1);
+			const newDisplayValue = "";//displayValue.substring(0, displayValue.length - 1);
 			dataAttr.setTextValue(newValue);
 			setTextValue(newValue);
 			setDisplayValue(newDisplayValue);

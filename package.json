@@ -1,10 +1,10 @@
 {
   "name": "nativepininput",
   "widgetName": "NativePinInput",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Mendix React Native Pin Input Widget",
   "copyright": "GNU",
-  "author": "Ockert van Schalkwyk",
+  "author": "Ockert van Schalkwyk - Originally Marcel Groeneweg",
   "engines": {
     "node": ">=12"
   },
