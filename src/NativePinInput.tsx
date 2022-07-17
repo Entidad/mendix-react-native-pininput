@@ -6,16 +6,19 @@ import { mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
 import { PinInputButton } from "./components/PinInputButton";
 import { ValueStatus } from "mendix";
 import { DeleteButton } from "./components/DeleteButton";
+import { UndoButton } from "./components/UndoButton";
 export function NativePinInput({
 	style,
 	dataAttr,
 	maxLength,
 	deleteButtonIcon,
+	undoButtonIcon,
+	showUndoButton,
 	darkMode,
 	buttonStyle,
 	onChangeAction,
 	onInputCompleteAction,
-	bottomLeft
+	//bottomLeft
 }: NativePinInputProps<CustomStyle>): ReactElement {
 	const deviceDarkMode = Appearance.getColorScheme() === "dark";
 
@@ -98,6 +101,29 @@ export function NativePinInput({
 			}
 		}
 	};
+	const onUndoClick = (): void => {
+		if (!dataAttr || dataAttr.status !== ValueStatus.Available) {
+			return;
+		}
+		/*
+		if (textValue && displayValue && textValue.length > 0) {
+			const newValue = textValue.substring(0, textValue.length - 1);
+			const newDisplayValue = displayValue.substring(0, displayValue.length - 1);
+			dataAttr.setTextValue(newValue);
+			setTextValue(newValue);
+			setDisplayValue(newDisplayValue);
+			if (onChangeAction && onChangeAction.canExecute && !onChangeAction.isExecuting) {
+				onChangeAction.execute();
+			}
+		}
+		*/
+		dataAttr.setTextValue("");
+		setTextValue("");
+		setDisplayValue("");
+		if (onChangeAction && onChangeAction.canExecute && !onChangeAction.isExecuting) {
+			onChangeAction.execute();
+		}
+	};
 	const renderValidation = useMemo((): ReactElement => {
 		let validation;
 		if (dataAttr.validation) {
@@ -130,12 +156,21 @@ export function NativePinInput({
 				<PinInputButton caption="9" style={mergedStyle} onClick={onClick} />
 			</View>
 			<View style={mergedStyle.buttonRow}>
-				<View style={mergedStyle.emptyContainer}>
-					{bottomLeft}
-				</View>
+				{showUndoButton&&undoButtonIcon&&
+					<UndoButton undoButtonIcon={undoButtonIcon} style={mergedStyle} onClick={onUndoClick} />
+				}
+				{!showUndoButton&&
+					<View style={mergedStyle.emptyContainer}></View>
+				}
 				<PinInputButton caption="0" style={mergedStyle} onClick={onClick} />
 				<DeleteButton deleteButtonIcon={deleteButtonIcon} style={mergedStyle} onClick={onDeleteClick} />
 			</View>
 		</View>
 	);
+	/*
+				<View style={mergedStyle.emptyContainer}>
+					{bottomLeft}
+				</View>
+
+	*/
 }

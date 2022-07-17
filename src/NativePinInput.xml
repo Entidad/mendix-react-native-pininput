@@ -14,10 +14,6 @@
 	<studioProCategory>Input elements</studioProCategory>
 	<properties>
 		<propertyGroup caption="General">
-                        <property key="bottomLeft" type="widgets" required="false">
-                                <caption>Bottom Left</caption>
-                                <description></description>
-                        </property>
 			<property key="dataAttr" type="attribute">
 				<caption>Attribute</caption>
 				<description>Data attribute</description>
@@ -34,6 +30,15 @@
 				<caption>Delete button icon</caption>
 				<description></description>
 			</property>
+			<property key="undoButtonIcon" type="icon" required="false">
+				<caption>Undo button icon</caption>
+				<description></description>
+			</property>
+			<property key="showUndoButton" type="boolean" required="true" defaultValue="false">
+				<caption>Show Undo Button</caption>
+				<description/>
+			</property>
+
 		</propertyGroup>
 		<propertyGroup caption="Styling">
 			<property key="darkMode" type="enumeration" defaultValue="device">
