@@ -130,6 +130,16 @@ export const circleStyles = StyleSheet.create({
         paddingBottom: 20,
         paddingRight: 30
     },
+	pinInputView: {
+		marginLeft: 30,
+		alignItems: "center",
+		height: 70,
+		width: 70,
+		borderRadius: 35,
+		borderWidth:1,
+		borderColor: 'gray'
+	},
+	/*
     pinInputView: {
         marginLeft: 30,
         alignItems: "center",
@@ -137,6 +147,7 @@ export const circleStyles = StyleSheet.create({
         width: 70,
         borderRadius: 35
     },
+	*/
     deleteButtonTouchable: {
         marginLeft: 30,
         height: 70,
