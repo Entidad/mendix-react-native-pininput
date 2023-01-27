@@ -29,19 +29,57 @@ This widget uses buttons and shows the number of entered digits in a readonly te
 
 ## Sample Content Area Button Styling
 
+Edit `theme/native/main.js` and add the following
+
 ```
-export const PinInputUndoButton={
-        container:{
-                width:"100%",
-                height:"100%",
-                backgroundColor:"unset",
-                borderWidth:0,
-        },
-        icon:{
-                color:"#FFFFFF",
-                size:30
-        }
-};
+export const entidad_io_nativepininput_NativePinInput={
+	container:{
+		borderWidth:0
+	},
+	valueRow:{
+		paddingHorizontal:20,
+		maxWidth:360
+	},
+	readonlyText:{
+		textAlign:"center",
+		fontSize:25,
+		backgroundColor:"transparent"
+	},
+	validationMessage:{
+		textAlign:"center",
+		color:"#ed1c24",
+		height:20
+	},
+	buttonRow:{
+		flexDirection:"row",
+		paddingHorizontal:0,
+		justifyContent:"center"
+	},
+	pinInputView:{/* the round buttons */
+		justifyContent:"center",
+		borderRadius:0
+	},
+	deleteButtonTouchable:{
+		justifyContent:"center",
+		alignItems:"center",
+		backgroundColor:"transparent"
+	},
+	undoButtonTouchable:{//entidad
+		justifyContent:"center",
+		alignItems:"center",
+		backgroundColor:"transparent"
+	},
+	emptyContainer:{
+		backgroundColor:"transparent"
+	},
+	icon:{
+		fontSize:25
+	},
+	caption:{
+		textAlign:"center",
+		fontSize:25
+	}
+}
 ```
 
 ## Demo project
