@@ -68,6 +68,11 @@
 				<caption>Input complete action</caption>
 				<description>Action to trigger when user has entered the required number of digits</description>
 			</property>
+			<property key="onUndoAction" type="action" required="false">
+				<caption>On undo action</caption>
+				<description>Action to trigger when undo is clicked</description>
+			</property>
+
 		</propertyGroup>
 	</properties>
 </widget>

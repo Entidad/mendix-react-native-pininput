@@ -18,6 +18,7 @@ export function NativePinInput({
 	buttonStyle,
 	onChangeAction,
 	onInputCompleteAction,
+	onUndoAction,
 	//bottomLeft
 }: NativePinInputProps<CustomStyle>): ReactElement {
 	const deviceDarkMode = Appearance.getColorScheme() === "dark";
@@ -122,6 +123,10 @@ export function NativePinInput({
 		setDisplayValue("");
 		if (onChangeAction && onChangeAction.canExecute && !onChangeAction.isExecuting) {
 			onChangeAction.execute();
+		}
+		//Fri Mar 22 14:50:12 SAST 2024
+		if (onUndoAction && onUndoAction.canExecute && !onUndoAction.isExecuting) {
+			onUndoAction.execute();
 		}
 	};
 	const renderValidation = useMemo((): ReactElement => {

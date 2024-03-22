@@ -22,6 +22,8 @@ export interface NativePinInputProps<Style> {
     buttonStyle: ButtonStyleEnum;
     onChangeAction?: ActionValue;
     onInputCompleteAction?: ActionValue;
+    onUndoAction?: ActionValue;
+    version: string;
 }
 
 export interface NativePinInputPreviewProps {
@@ -38,4 +40,6 @@ export interface NativePinInputPreviewProps {
     buttonStyle: ButtonStyleEnum;
     onChangeAction: {} | null;
     onInputCompleteAction: {} | null;
+    onUndoAction: {} | null;
+    version: string;
 }

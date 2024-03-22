@@ -1,7 +1,7 @@
 {
   "name": "nativepininput",
   "widgetName": "NativePinInput",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mendix React Native Pin Input Widget",
   "copyright": "GNU",
   "author": "Ockert van Schalkwyk - Originally Marcel Groeneweg",
@@ -9,7 +9,7 @@
     "node": ">=12"
   },
   "config": {
-    "projectPath": "./test/"
+    "projectPath": "../mendix-pininput/"
   },
   "packagePath": "entidad.io",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "license": "GNU",
   "bugs": {
-    "url": "https://github.com/Ockert van Schalkwyk/nativepininput/issues"
+    "url": "https://github.com/Entidad/mendix-react-native-pininput/issues"
   },
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": "^9.0.0",
@@ -30,7 +30,5 @@
     "@types/react": "~17.0.1",
     "@types/react-native": "~0.63.52"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
