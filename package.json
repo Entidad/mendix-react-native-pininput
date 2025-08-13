@@ -1,12 +1,12 @@
 {
   "name": "nativepininput",
   "widgetName": "NativePinInput",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Mendix React Native Pin Input Widget. Original source author Marcel Groeneweg.",
   "copyright": "©Entidad 2021-2025. All Rights Reserved.",
   "author": "Ockert van Schalkwyk",
   "engines": {
-    "node": ">=12"
+    "node": ">=20"
   },
   "config": {
     "projectPath": "../mendix-pininput/"
@@ -25,7 +25,7 @@
     "url": "https://github.com/Entidad/mendix-react-native-pininput/issues"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^10.5.1",
+    "@mendix/pluggable-widgets-tools": "^10.12.1",
     "@types/big.js": "^6.0.2",
     "tslib": "^2.8.1"
   },

@@ -34,8 +34,7 @@ export interface NativePinInputPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    renderMode: "design" | "xray" | "structure";
-    translate: (text: string) => string;
+    renderMode?: "design" | "xray" | "structure";
     dataAttr: string;
     maxLength: number | null;
     deleteButtonIcon: { type: "glyph"; iconClass: string; } | { type: "image"; imageUrl: string; iconUrl: string; } | { type: "icon"; iconClass: string; } | undefined;
