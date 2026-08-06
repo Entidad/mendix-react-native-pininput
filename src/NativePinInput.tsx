@@ -1,4 +1,4 @@
-import { createElement, ReactElement, useEffect, useMemo, useState } from "react";
+import { ReactElement, useEffect, useMemo, useState } from "react";
 import { Appearance, Text, View, TextInput } from "react-native";
 import { NativePinInputProps } from "../typings/NativePinInputProps";
 import { circleStyles, numKeyboardStyles, darkStyles, lightStyles, CustomStyle, defaultStyle } from "./ui/styles";
